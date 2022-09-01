@@ -17,7 +17,11 @@ const register = createAsyncThunk('auth/register', async credentials => {
     const { data } = await axios.post('/users/signup', credentials);
     token.set(data.token);
     return data;
-  } catch (error) {}
+  } catch (error) {
+    alert(
+      `${error.response.request.statusText}: Something went wrong. Probably the User with same name or Email has already existed. Try again.`
+    );
+  }
 });
 
 const logIn = createAsyncThunk('auth/login', async credentials => {
@@ -25,7 +29,10 @@ const logIn = createAsyncThunk('auth/login', async credentials => {
     const { data } = await axios.post('/users/login', credentials);
     token.set(data.token);
     return data;
-  } catch (error) {}
+  } catch (error) {
+    // console.log(error.response.request.statusText);
+    alert(`${error.response.request.statusText}: check your Email or Password`);
+  }
 });
 
 const logOut = createAsyncThunk('auth/logout', async () => {

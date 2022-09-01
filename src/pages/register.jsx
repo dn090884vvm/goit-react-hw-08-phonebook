@@ -32,15 +32,28 @@ export default function Register() {
   return (
     <form onSubmit={handleSubmit}>
       <p>name</p>
-      <input type="text" name="name" value={name} onChange={handleChange} />
+      <input
+        type="text"
+        name="name"
+        value={name}
+        onChange={handleChange}
+        required
+      />
       <p>email</p>
-      <input type="email" name="email" value={email} onChange={handleChange} />
+      <input
+        type="email"
+        name="email"
+        value={email}
+        onChange={handleChange}
+        required
+      />
       <p>password</p>
       <input
         type="password"
         name="password"
         value={password}
         onChange={handleChange}
+        required
       />
       <button>Register</button>
     </form>

@@ -1,9 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-
+import { List } from './ContactsList.styled';
 import { contactsOperations } from 'redux/contacts/contacts-operations';
 import Filter from 'components/Filter/Filter';
 import Addcontact from 'components/Addcontact/Addcontacts';
+import ContactsItem from './ContactsItem';
+import { Wrapper } from './ContactsList.styled';
 
 export default function Contacts() {
   const dispatch = useDispatch();
@@ -27,34 +29,28 @@ export default function Contacts() {
   // console.log('this is after pushing', contacts);
 
   return (
-    <div>
+    <Wrapper>
       <Addcontact />
       <Filter />{' '}
-      <ul>
+      <List>
         {contacts &&
           getFilteredContacts().map(contact => (
-            <li key={contact.id}>
-              <p>{contact.name}</p>
-              <p>{contact.number}</p>
-              <button
-                type="button"
-                onClick={() => {
-                  dispatch(contactsOperations.deleteContact(contact.id));
-                }}
-              >
-                Delete
-              </button>
-            </li>
+            <ContactsItem key={contact.id} contact={contact}></ContactsItem>
+            // <li key={contact.id}>
+            //   <p>{contact.name}</p>
+            //   <p>{contact.number}</p>
+            //   <button
+            //     type="button"
+            //     onClick={() => {
+            //       dispatch(contactsOperations.deleteContact(contact.id));
+            //     }}
+            //   >
+            //     Delete
+            //   </button>
+            // </li>
           ))}
-      </ul>
-      {/* <button
-        type="button"
-        onClick={() => dispatch(contactsOperations.getContact())}
-      >
-        {' '}
-        get contacts
-      </button> */}
-    </div>
+      </List>
+    </Wrapper>
   );
 }
 

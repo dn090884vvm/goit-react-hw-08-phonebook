@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const ListElement = styled.li`
   display: flex;
+  justify-content: space-between;
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
 `;
 
 export const Button = styled.button`
-  margin-left: 10px;
   border-radius: 5px;
   padding: 0px 10px;
   cursor: pointer;

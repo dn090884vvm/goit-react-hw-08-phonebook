@@ -3,7 +3,7 @@
 import authSelectors from 'redux/auth/auth-selectors';
 import { useSelector, useDispatch } from 'react-redux';
 import { authOperations } from 'redux/auth/auth-operations';
-import { Wrapper } from './userMenue.styled';
+import { Wrapper, Button } from './userMenue.styled';
 
 export default function UserMenue() {
   const dispatch = useDispatch();
@@ -12,11 +12,11 @@ export default function UserMenue() {
   // console.log(name);
   return (
     <Wrapper>
-      {name !== null && <p>{`Welcome ${name}`}</p>}
+      {name !== null && <p>{`Welcome,  ${name}`}</p>}
       {/* <p>{`your token is ${token}`}</p> */}
-      <button type="button" onClick={() => dispatch(authOperations.logOut())}>
+      <Button type="Button" onClick={() => dispatch(authOperations.logOut())}>
         Logout
-      </button>
+      </Button>
     </Wrapper>
   );
 }
