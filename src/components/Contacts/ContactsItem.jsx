@@ -1,7 +1,7 @@
 // import { ListElement, Button } from './ContactList.styled';
 import { useDispatch } from 'react-redux';
 import { contactsOperations } from 'redux/contacts/contacts-operations';
-import { Button, ListElement } from './ContactsItem.styled';
+import { Button, ListElement, Paragraph } from './ContactsItem.styled';
 
 export default function ContactsItem({ contact }) {
   const dispatch = useDispatch();
@@ -9,8 +9,8 @@ export default function ContactsItem({ contact }) {
 
   return (
     <ListElement>
-      <p>{name}</p>
-      <p>{number}</p>
+      <Paragraph>{name}</Paragraph>
+      <Paragraph>{number}</Paragraph>
       <Button
         onClick={() => {
           dispatch(contactsOperations.deleteContact(contact.id));

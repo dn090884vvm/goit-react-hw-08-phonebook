@@ -1,14 +1,10 @@
 import styled from 'styled-components';
 
-export const ListElement = styled.li`
-  display: flex;
-  justify-content: space-between;
-  &:not(:last-child) {
-    margin-bottom: 10px;
-  }
-`;
-
 export const Button = styled.button`
+  display: block;
+  margin-top: 10px;
+
+  margin-bottom: 10px;
   border-radius: 5px;
   padding: 0px 10px;
   cursor: pointer;
@@ -17,6 +13,7 @@ export const Button = styled.button`
   font-weight: 700;
 `;
 
-export const Paragraph = styled.p`
+export const FormParagraph = styled.p`
   margin-bottom: 10px;
+  margin-top: 10px;
 `;

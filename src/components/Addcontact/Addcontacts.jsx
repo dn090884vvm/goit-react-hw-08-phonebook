@@ -1,5 +1,6 @@
 import { contactsOperations } from 'redux/contacts/contacts-operations';
 import { useDispatch, useSelector } from 'react-redux';
+import { Button, FormParagraph } from './Addcontact.styled';
 
 export default function Addcontact() {
   const contacts = useSelector(state => state.contacts.contacts);
@@ -35,7 +36,7 @@ export default function Addcontact() {
     <div>
       {' '}
       <form onSubmit={handleSubmit}>
-        <p>Name</p>
+        <FormParagraph>Name</FormParagraph>
         <input
           type="text"
           name="name"
@@ -44,7 +45,7 @@ export default function Addcontact() {
           required
         />
 
-        <p>Number</p>
+        <FormParagraph>Number</FormParagraph>
         <input
           type="tel"
           name="number"
@@ -53,7 +54,7 @@ export default function Addcontact() {
           required
         />
 
-        <button type="submit">Add contact</button>
+        <Button type="submit">Add contact</Button>
       </form>
     </div>
   );
