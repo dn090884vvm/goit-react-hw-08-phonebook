@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-// import { phonebookReducer } from './phonebookReducer';
+
 import {
   persistStore,
   persistReducer,
@@ -26,7 +26,6 @@ const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
     contacts: contactReducer,
-    // contact: contactReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

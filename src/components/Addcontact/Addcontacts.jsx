@@ -29,9 +29,8 @@ export default function Addcontact() {
       name: target.name.value,
       number: target.number.value,
     };
-    // console.log(formDatas);
+
     dispatch(contactsOperations.addContact(formDatas));
-    // dispatch(addContact(formDatas));
 
     e.target.elements.name.value = '';
     e.target.elements.number.value = '';

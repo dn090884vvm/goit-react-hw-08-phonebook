@@ -4,7 +4,7 @@ export const Button = styled.button`
   display: block;
 
   max-width: 100px;
-  /* align-items: center; */
+
   margin: 20px auto;
 
   margin-bottom: 10px;

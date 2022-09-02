@@ -4,19 +4,12 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import MainBar from './MainBar/MainBar';
 import Register from 'pages/register';
 import Login from 'pages/login';
-// import User from 'pages/user';
 import { Home } from 'pages/home';
 import Contacts from 'components/Contacts/ContactsList';
 import { authOperations } from 'redux/auth/auth-operations';
 import PrivateRoute from './Routes/PrivateRoute';
 import PublicRoute from './Routes/PublicRoute';
 import { SectionWrapper } from 'App.styled';
-
-// const MainBar = lazy(() => import('./MainBar/MainBar'));
-// const Home = lazy(() => import('../pages/home'));
-// const Contacts = lazy(() => import('../pages/contacts'));
-// const Register = lazy(() => import('../pages/register'));
-// const Login = lazy(() => import('../pages/login'));
 import { GlobalStyle } from 'Globalstyle/GlobalStyle';
 
 export const App = () => {

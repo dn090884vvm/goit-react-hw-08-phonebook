@@ -26,7 +26,6 @@ export default function Contacts() {
       contact.name.toLowerCase().includes(normalizedFilter)
     );
   };
-  // console.log('this is after pushing', contacts);
 
   return (
     <Wrapper>
@@ -36,66 +35,8 @@ export default function Contacts() {
         {contacts &&
           getFilteredContacts().map(contact => (
             <ContactsItem key={contact.id} contact={contact}></ContactsItem>
-            // <li key={contact.id}>
-            //   <p>{contact.name}</p>
-            //   <p>{contact.number}</p>
-            //   <button
-            //     type="button"
-            //     onClick={() => {
-            //       dispatch(contactsOperations.deleteContact(contact.id));
-            //     }}
-            //   >
-            //     Delete
-            //   </button>
-            // </li>
           ))}
       </List>
     </Wrapper>
   );
 }
-
-// export default function Contacts() {
-//   const [contacts, setContacts] = useState();
-
-//   const dispatch = useDispatch();
-//   const getContacts = createAsyncThunk('', async () => {
-//     try {
-//       const { data } = await axios.get('/contacts');
-//       // console.log(data);
-//       setContacts(data);
-//       return data;
-//     } catch (error) {}
-//   });
-
-//   const addContact = createAsyncThunk('', async () => {
-//     try {
-//       const newcontact = { name: 'voha', email: '1234567' };
-//       await axios.post('/contacts', newcontact);
-
-//       // return data;
-//     } catch (error) {}
-//   });
-//   console.log(contacts);
-//   return (
-//     <div>
-//       <button type="button" onClick={() => dispatch(getContacts())}>
-//         {' '}
-//         get your contacts
-//       </button>
-//       <button type="button" onClick={() => dispatch(addContact())}>
-//         {' '}
-//         add contact
-//       </button>
-//       {contacts && (
-//         <ul>
-//           {contacts.map(contact => (
-//             <li key={contact.id}>
-//               <p>{contact.name}</p>
-//               <p>{contact.number}</p>
-//             </li>
-//           ))}
-//         </ul>
-//       )}
-//     </div>
-//   );
-// }

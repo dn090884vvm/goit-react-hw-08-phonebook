@@ -30,7 +30,6 @@ const logIn = createAsyncThunk('auth/login', async credentials => {
     token.set(data.token);
     return data;
   } catch (error) {
-    // console.log(error.response.request.statusText);
     alert(`${error.response.request.statusText}: check your Email or Password`);
   }
 });
@@ -43,24 +42,15 @@ const logOut = createAsyncThunk('auth/logout', async () => {
   } catch (error) {}
 });
 
-// const getContacts = createAsyncThunk('auth/contacts', async () => {
-//   try {
-//     const { data } = await axios.get('/contacts');
-//     console.log(data);
-//     // token.unset();
-//     return data;
-//   } catch (error) {}
-// });
 const fetchCurrentUser = createAsyncThunk(
   'auth/refresh',
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
-    // console.log(state)
+
     const persistedToken = state.auth.token;
-    // console.log(token);
+
     if (persistedToken === null) {
       return thunkAPI.rejectWithValue();
-      // return state;
     }
     token.set(persistedToken);
     try {
@@ -75,6 +65,4 @@ export const authOperations = {
   logIn: logIn,
   logOut: logOut,
   fetchCurrentUser: fetchCurrentUser,
-  // token: token,
-  // getContacts: getContacts,
 };
