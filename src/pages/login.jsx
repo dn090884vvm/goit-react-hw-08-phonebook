@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/auth/auth-operations';
+import { Button, LoginWrapper } from './Login.styled';
 
 export default function Login() {
   const dispatch = useDispatch();
@@ -26,17 +27,24 @@ export default function Login() {
     setPassword('');
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <p>email</p>
-      <input type="email" name="email" value={email} onChange={handleChange} />
-      <p>password</p>
-      <input
-        type="password"
-        name="password"
-        value={password}
-        onChange={handleChange}
-      />
-      <button>Login</button>
-    </form>
+    <LoginWrapper>
+      <form onSubmit={handleSubmit}>
+        <p>email</p>
+        <input
+          type="email"
+          name="email"
+          value={email}
+          onChange={handleChange}
+        />
+        <p>password</p>
+        <input
+          type="password"
+          name="password"
+          value={password}
+          onChange={handleChange}
+        />
+        <Button>Login</Button>
+      </form>
+    </LoginWrapper>
   );
 }

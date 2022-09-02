@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { authOperations } from 'redux/auth/auth-operations';
 import { useDispatch } from 'react-redux';
+import { Button, RegisterWrapper } from './Register.styled';
 
 export default function Register() {
   const dispatch = useDispatch();
@@ -30,32 +31,34 @@ export default function Register() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <p>name</p>
-      <input
-        type="text"
-        name="name"
-        value={name}
-        onChange={handleChange}
-        required
-      />
-      <p>email</p>
-      <input
-        type="email"
-        name="email"
-        value={email}
-        onChange={handleChange}
-        required
-      />
-      <p>password</p>
-      <input
-        type="password"
-        name="password"
-        value={password}
-        onChange={handleChange}
-        required
-      />
-      <button>Register</button>
-    </form>
+    <RegisterWrapper>
+      <form onSubmit={handleSubmit}>
+        <p>name</p>
+        <input
+          type="text"
+          name="name"
+          value={name}
+          onChange={handleChange}
+          required
+        />
+        <p>email</p>
+        <input
+          type="email"
+          name="email"
+          value={email}
+          onChange={handleChange}
+          required
+        />
+        <p>password</p>
+        <input
+          type="password"
+          name="password"
+          value={password}
+          onChange={handleChange}
+          required
+        />
+        <Button>Register</Button>
+      </form>
+    </RegisterWrapper>
   );
 }

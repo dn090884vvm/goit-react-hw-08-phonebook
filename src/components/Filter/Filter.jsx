@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { contactsOperations } from 'redux/contacts/contacts-operations';
+import { Label, FilterParagraph } from './Filter.styled';
 
 export default function Filter() {
   const dispatch = useDispatch();
@@ -9,9 +10,9 @@ export default function Filter() {
     dispatch(contactsOperations.filter(e.target.value));
   };
   return (
-    <label>
-      <p>Find contacts by name</p>
+    <Label>
+      <FilterParagraph>Find contacts by name</FilterParagraph>
       <input type="text" name="search" value={value} onChange={handleImput} />
-    </label>
+    </Label>
   );
 }

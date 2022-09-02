@@ -18,5 +18,13 @@ export const Button = styled.button`
 `;
 
 export const Paragraph = styled.p`
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
+  /* display: inline-flexbox; */
+  /* margin-left: 15px; */
+`;
+
+export const DataWrapper = styled.div`
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
 `;
