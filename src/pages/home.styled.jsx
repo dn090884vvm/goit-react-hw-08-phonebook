@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const HomeWrapper = styled.section`
+  /* background-image: url('./images/pb.png'); */
   width: 800px;
   height: auto;
   display: block;
@@ -15,6 +16,10 @@ export const HomeWrapper = styled.section`
 
 export const Section = styled.section`
   margin: 30px auto;
+`;
+export const Header1 = styled.h2`
+  margin: 20px auto;
+  text-align: center;
 `;
 
 export const Header2 = styled.h2`

@@ -1,6 +1,7 @@
 import {
   HomeWrapper,
   Section,
+  Header1,
   Header2,
   Suggest,
   ListEl,
@@ -10,7 +11,7 @@ import {
 export function Home() {
   return (
     <HomeWrapper>
-      <h1>Hi mate, we welcome you to our service page</h1>
+      <Header1>Hi mate, we welcome you to our service page</Header1>
       <Section>
         <Header2>Your Phonebook is waiting for you</Header2>
         <Suggest>We suggest you the following:</Suggest>
